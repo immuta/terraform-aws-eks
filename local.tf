@@ -27,7 +27,7 @@ locals {
   kubeconfig_name     = var.kubeconfig_name == "" ? "eks_${var.cluster_name}" : var.kubeconfig_name
 
   worker_group_count                       = length(var.worker_groups)
-  worker_group_launch_template_count       = length(var.worker_groups_launch_template)
+  worker_group_launch_template_count       = var.worker_groups_launch_template_count > 0 ? var.worker_groups_launch_template_count : length(var.worker_groups_launch_template)
   worker_group_launch_template_mixed_count = length(var.worker_groups_launch_template_mixed)
 
   workers_group_defaults_defaults = {

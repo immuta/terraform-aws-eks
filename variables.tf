@@ -100,6 +100,12 @@ variable "workers_group_defaults" {
   default     = {}
 }
 
+variable "worker_groups_launch_template_count" {
+  description = "[Optional] The number of worker group launch templates.  This is only needed when building your launch template list dynamically."
+  type        = number
+  default     = 0
+}
+
 variable "worker_groups_launch_template" {
   description = "A list of maps defining worker group configurations to be defined using AWS Launch Templates. See workers_group_defaults for valid keys."
   type        = any
