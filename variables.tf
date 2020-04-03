@@ -144,6 +144,12 @@ variable "worker_additional_security_group_ids" {
   default     = []
 }
 
+variable "worker_groups_launch_template_count" {
+  description = "[Optional] The number of worker group launch templates.  This is only needed when building your launch template list dynamically."
+  type        = number
+  default     = 0
+}
+
 variable "worker_sg_ingress_from_port" {
   description = "Minimum port number from which pods will accept communication. Must be changed to a lower value if some pods in your cluster will expose a port lower than 1025 (e.g. 22, 80, or 443)."
   type        = number
